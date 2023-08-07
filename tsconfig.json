@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "experimentalDecorators": true,
     "strict": true,
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"]
     },
+    "types": ["node"],
     "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",

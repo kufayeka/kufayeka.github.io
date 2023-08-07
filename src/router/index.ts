@@ -8,7 +8,8 @@ const routes: Array<RouteRecordRaw> = [
   // },
   {
     path: "/",
-    redirect: "/home",
+    name: "MAIN_PAGE",
+    component: () => import("./"),
   },
 ];
 

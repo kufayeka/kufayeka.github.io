@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ViewMain from "./views/ViewMain.vue";
+</script>
 
 <template>
-  <RouterView />
+  <ViewMain />
 </template>
 
 <style scoped></style>

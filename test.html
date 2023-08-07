@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VantaJS Animation</title>
+    <!-- Include VantaJS library -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.131.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.fog.min.js"></script>
+  </head>
+  <body>
+    <div id="vantajs-container"></div>
+    <script>
+      // Inisialisasi efek animasi fog dengan VantaJS
+      VANTA.FOG({
+        el: "#vantajs-container", // ID elemen target
+        highlightColor: 0xff00ff, // Warna sorotan (opsional)
+        midtoneColor: 0x00ff00, // Warna tengah (opsional)
+        lowlightColor: 0x0000ff, // Warna redup (opsional)
+      });
+    </script>
+  </body>
+</html>
