@@ -1,0 +1,1 @@
+import{d as n,a as o,c,w as s,o as r,e as d,g as i}from"./index-c7a0a74f.js";const _=n({__name:"EducationView",setup(u){const e=o();return c(()=>{}),s(e,(t,a)=>{}),r(()=>{}),(t,a)=>(d(),i("div",null,"Ini education view"))}});export{_ as default};
