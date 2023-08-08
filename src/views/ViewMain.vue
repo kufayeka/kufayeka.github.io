@@ -1,6 +1,6 @@
 <template>
   <div id="vantajs-container">
-    <div class="flex p-7 space-x-7 relative">
+    <div class="flex p-7 space-x-7 relative hidden">
       <div class="w-2/3 h-96 bg-glass-red rounded-3xl text-white p-8 shadow-lg relative flex flex-col justify-center">
         <!-- Content for the second div (1/1.5 of the screen width) -->
         <h1 class="text-4xl font-bold mb-4">Hey, I'm Yeka Kufa</h1>
