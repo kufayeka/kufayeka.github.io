@@ -12,7 +12,7 @@ export const HeaderDesktop = styled.div`
   backdrop-filter: blur(10px);
   z-index: 999;
   height: 50px;
-  
+  background-color: #13151a;
   @media (max-width: 768px) {
     display: none;
   }
@@ -45,8 +45,8 @@ export const HeaderLink = styled.a<{ active?: boolean }>`
   margin-right: 3px;
   
   @media (min-width: 900px) {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
   
   &:hover {
@@ -59,7 +59,8 @@ export const HeaderLinkIndicator = styled.div<{ active?: boolean }>`
   bottom: 0;
   width: 100%; 
   height: 3px;
-  background-color: ${props => (props.active ? "" : 'none')};
+  --tw-bg-opacity: 1;
+  background-color: ${props => (!props.active ? "" : "rgb(153 27 27 / var(--tw-bg-opacity))")};
 `;
 
 export const HeaderRight = styled.div`

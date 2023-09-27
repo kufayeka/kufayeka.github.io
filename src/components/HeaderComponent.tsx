@@ -24,7 +24,7 @@ export default function HeaderComponent(){
                     <HeaderLinkIndicator></HeaderLinkIndicator>
                 </HeaderLink>
                 <HeaderLink>
-                    <a className="text-white">Tentang</a>
+                    <a className="text-white">Others</a>
                     <HeaderLinkIndicator></HeaderLinkIndicator>
                 </HeaderLink>
             </HeaderCenter>
