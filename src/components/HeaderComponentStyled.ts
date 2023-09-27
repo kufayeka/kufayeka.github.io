@@ -10,10 +10,9 @@ export const HeaderDesktop = styled.div`
   position: sticky;
   top: 0;
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid gray;
   z-index: 999;
   height: 50px;
-  background-color: white;
+  
   @media (max-width: 768px) {
     display: none;
   }
@@ -60,7 +59,7 @@ export const HeaderLinkIndicator = styled.div<{ active?: boolean }>`
   bottom: 0;
   width: 100%; 
   height: 3px;
-  background-color: ${props => (props.active ? colors.primary : 'none')};
+  background-color: ${props => (props.active ? "" : 'none')};
 `;
 
 export const HeaderRight = styled.div`

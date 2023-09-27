@@ -16,21 +16,20 @@ export default function HeaderComponent(){
             <HeaderLeft></HeaderLeft>
             <HeaderCenter>
                 <HeaderLink>
-                    <a>Home</a>
+                    <a className="text-white">Home</a>
+                    <HeaderLinkIndicator active={true}></HeaderLinkIndicator>
+                </HeaderLink>
+                <HeaderLink>
+                    <a className="text-white">Portfolio</a>
                     <HeaderLinkIndicator></HeaderLinkIndicator>
                 </HeaderLink>
                 <HeaderLink>
-                    <a>Portfolio</a>
-                    <HeaderLinkIndicator></HeaderLinkIndicator>
-                </HeaderLink>
-                <HeaderLink>
-                    <a>Tentang</a>
+                    <a className="text-white">Tentang</a>
                     <HeaderLinkIndicator></HeaderLinkIndicator>
                 </HeaderLink>
             </HeaderCenter>
             <HeaderRight></HeaderRight>
         </HeaderDesktop>
-        <div className="w-full h-1 bg-gradient-to-l from-transparent via-red-800 to-transparent"></div>
         </>
     )
 }
