@@ -6,7 +6,7 @@ export default function HomePage(){
         <div className="flex relative flex-col">
             <HeaderComponent></HeaderComponent>
             <div className="absolute w-full h-[100vh] -z-10">
-                <img className="fixed w-full h-full object-cover opacity-5" src="../../public/img/9345037.jpg" />
+                <img className="fixed w-full h-full object-cover opacity-5" src="/img/9345037.jpg" />
             </div>
 
             <div className="flex flex-row p-3 items-center justify-center relative mt-10">
@@ -20,7 +20,7 @@ export default function HomePage(){
                     </div>
                 </div>
                 <div>
-                    <img src="../../public/img/IMG-2913.jpg" className="w-80 h-80 object-contain border-2 border-white rounded-lg"></img>
+                    <img src="/img/IMG-2913.jpg" className="w-80 h-80 object-contain border-2 border-white rounded-lg"></img>
                     <div className="absolute -z-10 top-[10%] ml-20 bg-red-800 w-72 h-72 rounded-full"></div>
                 </div>
             </div>
@@ -31,7 +31,7 @@ export default function HomePage(){
                         <h1 className="font-bold text-3xl text-white tracking-wide text-left">About Me</h1>
 
                         <div className="w-[20%] h-fit flex flex-col p-3">
-                            <img src="../../public/img/IMG-2157.jpg" className="rounded-lg object-cover border-2 border-white"></img>
+                            <img src="/img/IMG-2157.jpg" className="rounded-lg object-cover border-2 border-white"></img>
                         </div>
 
                         <div className="w-[50%] h-fit flex flex-col p-7 text-white rounded-md">
