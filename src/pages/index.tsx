@@ -1,86 +1,208 @@
 import React from "react";
 import HeaderComponent from "@components/HeaderComponent.tsx";
+import { SocialIcon } from 'react-social-icons/component';
+import 'react-social-icons/instagram';
+import 'react-social-icons/linkedin';
+import 'react-social-icons/whatsapp';
+import 'react-social-icons/github';
+import styled from '@emotion/styled';
+import {colors} from "../utils/color-pallete.ts";
+import {homeContent} from "../utils/home-content.ts";
 
-export default function HomePage(){
+// Define breakpoints
+const breakpoints = {
+    sm: '480px', // Small screens
+    md: '768px', // Medium screens
+    lg: '1024px', // Large screens
+    xl: '1280px', // Extra-large screens
+};
+
+const ColumnContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  gap: 1rem;
+`;
+
+const RowContainer = styled.div`
+    display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+`;
+
+interface cardPropsInterface {
+    backgroundColor: string;
+    glass: boolean;
+    radius: string;
+}
+
+const Card = styled.div<cardPropsInterface>`
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  gap: 1.25rem;
+
+  background-color: ${(props) => props.backgroundColor || 'transparent'};
+  backdrop-filter: ${(props) => (props.glass ? 'blur(10px)' : 'none')};
+  border-radius: ${(props) => props.radius || '0'};
+`;
+
+const RedHorizontalDivider = styled.div`
+    background: ${colors.red};
+  height: 3px;
+  width: 100%;
+`;
+
+const RedVerticalDivider = styled.div`
+    background: ${colors.red};
+  width: 3px;
+`;
+
+interface cardTitleInterface {
+    color: string;
+}
+
+const CardTitle = styled.h2<cardTitleInterface>`
+  font-size: 1.875rem/* 30px */;
+  line-height: 2.25rem/* 36px */;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: ${(props) => (props.color || "none")}};
+`;
+
+const CardBodyTitle = styled.h2<cardTitleInterface>`
+  font-size: 1.50rem/* 30px */;
+  line-height: 1.75rem/* 36px */;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: ${(props) => (props.color || "none")}};
+`;
+
+const CardBodyText = styled.h2<cardTitleInterface>`
+  font-size: 1rem/* 30px */;
+  line-height: 1rem/* 36px */;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: ${(props) => (props.color || "none")}};
+`;
+
+export default function HomePage() {
+    const handleInstagramLink = () => {
+        window.location.href = 'https://instagram.com/yayankufa';
+    };
+
+    const handleLinkedInLink = () => {
+        window.location.href = 'https://linkedin.com/in/yeka-kufa';
+    };
+
+    const handleWhatsAppLink = () => {
+        window.location.href = 'https://wa.me/+6285936188776';
+    };
+
+    const handleGithubLink = () => {
+        window.location.href = 'https://github.com/kufayeka';
+    };
+
     return (
-        <div className="flex relative flex-col">
-            <HeaderComponent></HeaderComponent>
-            <div className="absolute w-full h-[100vh] -z-10">
-                <img className="fixed w-full h-full object-cover opacity-20" src="/img/9345037.jpg" />
-            </div>
-
-            <div className="flex flex-row p-3 items-center justify-center relative mt-10">
-                <div className="w-fit h-fit flex flex-col p-3">
-                    <h1 className="font-bold text-2xl text-white">Hi👋🏽</h1>
-                    <h1 className="font-thin text-4xl text-white mt-3">I'm</h1>
-                    <h1 className="font-bold text-5xl text-white tracking-wider">Yeka Kufa</h1>
-                    <div className="bg-red-800 h-1 mt-3"></div>
-                    <div className="w-full">
-                        <p className=" text-white">Electrical Engineer, Software Engineer</p>
-                    </div>
+        <>
+            <ColumnContainer>
+                <HeaderComponent></HeaderComponent>
+                <div className="absolute w-full h-[100vh] -z-10">
+                    <img className="fixed w-full h-full object-cover opacity-20" src="/img/9345037.jpg" />
                 </div>
-                <div>
-                    <img src="/img/IMG-2913.jpg" className="w-80 h-80 object-contain border-2 border-white rounded-lg"></img>
-                    <div className="absolute -z-10 top-[10%] ml-20 bg-red-800 w-72 h-72 rounded-full flex flex-row items-center">
-                    </div>
-                </div>
-            </div>
 
-            <div className="flex flex-col p-3 mt-20">
-                <div className="backdrop-blur-md bg-white/5 w-full h-full flex flex-col p-3 border-black border-2">
-                    <div className="flex flex-row gap-3 p-3 items-center justify-center">
-                        <h1 className="font-bold text-3xl text-white tracking-wide text-left">About Me✌🏽</h1>
-
-                        <div className="w-[20%] h-fit flex flex-col p-3">
-                            <img src="/img/IMG-2157.jpg" className="rounded-lg object-cover border-2 border-white"></img>
-                        </div>
-
-                        <div className="w-[50%] h-fit flex flex-col p-7 text-white rounded-md">
-                            <p className="font-thin">I am a recent graduate from Petra Christian University (PCU) with a degree in Electrical Engineering. I have skills in Electrical Engineering, Automation, and Software Engineering (Backend and Web Development).
-                            </p>
-
-                            <div className="w-full h-[0.3vh] bg-red-800 mt-3"></div>
-
-                            <div className="flex flex-row gap-5 mt-3 text-lg">
-                                <div className="flex flex-col gap-2 tracking-wide">
-                                    <p className="font-semibold mr-3">Full Name</p>
-                                    <p className="font-semibold mr-3">Phone Number</p>
-                                    <p className="font-semibold mr-3">E-mail</p>
-                                </div>
-
-                                <div className="flex flex-col gap-2">
-                                    <div className="font-semibold mr-3">: <span className="font-normal">Sih Kawuryan Yulianes Kufa</span></div>
-                                    <div className="font-semibold mr-3">: <span className="font-normal">+6285936188776</span></div>
-                                    <div className="font-semibold mr-3">: <span className="font-normal">yayankufa18@gmail.com</span></div>
-                                </div>
-
-                            </div>
-                            <p className="font-semibold text-xl text-left mt-7 tracking-wide">Interests</p>
-                            <div className="flex flex-row gap-3 mt-3">
-                                <p className="bg-gray-200 text-black rounded-full px-3">Music</p>
-                                <p className="bg-gray-200 text-black rounded-full px-3">Film / Series</p>
-                                <p className="bg-gray-200 text-black rounded-full px-3">Travelling</p>
-                                <p className="bg-gray-200 text-black rounded-full px-3">Gardening</p>
-                            </div>
+                <RowContainer className="my-20">
+                    <div className="w-fit h-fit flex flex-col p-3">
+                        <h1 className="font-bold text-2xl text-white">Hi👋🏽</h1>
+                        <h1 className="font-thin text-4xl text-white mt-3">I'm</h1>
+                        <h1 className="font-bold text-5xl text-white tracking-wider">Yeka Kufa</h1>
+                        <RedHorizontalDivider></RedHorizontalDivider>
+                        <div className="w-full">
+                            <p className=" text-white">Electrical Engineer, Software Developer</p>
                         </div>
                     </div>
-
-                </div>
-
-                <div className="flex flex-col mt-3">
-                    <div className="bg-black w-full h-full flex flex-col p-3">
-                        <h1 className="font-bold text-3xl text-white tracking-wide">Skill</h1>
-                        <div className="flex flex-row gap-3 p-3">
-                            <div className="bg-white w-fit h-fit flex flex-col p-3">
-                                foto profile
-                            </div>
-                            <div className="bg-white w-fit h-fit flex flex-col p-3">
-                                biodata
-                            </div>
-                        </div>
+                    <div>
+                        <img src="/img/unnamed.jpg" className="w-72 h-80 object-cover object-bottom border-2 border-white rounded-sm"></img>
                     </div>
-                </div>
-            </div>
-        </div>
-    )
+                    <div className="absolute -z-10 top-[25%] left-[55%] bg-red-800 w-72 h-72 rounded-full flex flex-row items-center"/>
+                </RowContainer>
+
+                <RowContainer className="w-full bg-black/5 backdrop-blur-lg border-black border-2 p-3 justify-center">
+                    <ColumnContainer className="basis-1/2">
+                        <div className="w-full">
+                            <CardTitle color={colors.white} className="flex justify-start">About me</CardTitle>
+                        </div>
+                        <CardBodyText color={colors.white}>{homeContent.aboutMeText}</CardBodyText>
+                    </ColumnContainer>
+                    <RedVerticalDivider className="h-[30vh]"></RedVerticalDivider>
+                    <ColumnContainer className="basis-1/4">
+                        <CardBodyTitle color={colors.white} className="flex justify-start mt-3">Connect with me</CardBodyTitle>
+                        <RowContainer>
+                            <button onClick={handleLinkedInLink}>
+                                <SocialIcon network="linkedin"></SocialIcon>
+                            </button>
+                            <button onClick={handleWhatsAppLink}>
+                                <SocialIcon network="whatsapp"></SocialIcon>
+                            </button>
+                            <button onClick={handleInstagramLink}>
+                                <SocialIcon network="instagram"></SocialIcon>
+                            </button>
+                            <button onClick={handleGithubLink}>
+                                <SocialIcon network="github"></SocialIcon>
+                            </button>
+                        </RowContainer>
+                    </ColumnContainer>
+                </RowContainer>
+
+                <RowContainer className="w-full bg-black/5 backdrop-blur-lg border-black border-2 p-3 justify-center">
+                    <ColumnContainer>
+                        <CardTitle color={colors.white} className="flex">Skills</CardTitle>
+                        <div className="grid grid-cols-3 gap-2">
+                            <Card backgroundColor={colors.black} glass={true} radius={"5px"}>
+                                <CardBodyTitle color={colors.white} className="rounded-sm border-b-2 border-red-800 w-full p-1">Electrical Engineer</CardBodyTitle>
+                                <ColumnContainer>
+                                    {homeContent.mySkills.electricalEngineer.map((item, index) => {
+                                        return <CardBodyText color={colors.white}>{item}</CardBodyText>
+                                    })}
+                                </ColumnContainer>
+                            </Card>
+                            <Card backgroundColor={colors.black} glass={true} radius={"5px"}>
+                                <CardBodyTitle color={colors.white} className="rounded-sm border-b-2 border-red-800 w-full p-1">Programming Languages</CardBodyTitle>
+                                <ColumnContainer>
+                                    {homeContent.mySkills.programmingLanguages.map((item, index) => {
+                                        return <CardBodyText color={colors.white}>{item}</CardBodyText>
+                                    })}
+                                </ColumnContainer>
+                            </Card>
+                            <Card backgroundColor={colors.black} glass={true} radius={"5px"}>
+                                <CardBodyTitle color={colors.white} className="rounded-sm border-b-2 border-red-800 w-full p-1">Backend Frameworks</CardBodyTitle>
+                                <ColumnContainer>
+                                    {homeContent.mySkills.backendFrameworks.map((item, index) => {
+                                        return <CardBodyText color={colors.white}>{item}</CardBodyText>
+                                    })}
+                                </ColumnContainer>
+                            </Card>
+                            <Card backgroundColor={colors.black} glass={true} radius={"5px"}>
+                                <CardBodyTitle color={colors.white} className="rounded-sm border-b-2 border-red-800 w-full p-1">Database & ORM</CardBodyTitle>
+                                <ColumnContainer>
+                                    {homeContent.mySkills.databases.map((item, index) => {
+                                        return <CardBodyText color={colors.white}>{item}</CardBodyText>
+                                    })}
+                                </ColumnContainer>
+                            </Card>
+                            <Card backgroundColor={colors.black} glass={true} radius={"5px"}>
+                                <CardBodyTitle color={colors.white} className="rounded-sm border-b-2 border-red-800 w-full p-1">Frontend Frameworks</CardBodyTitle>
+                                <ColumnContainer>
+                                    {homeContent.mySkills.frontendFramework.map((item, index) => {
+                                        return <CardBodyText color={colors.white}>{item}</CardBodyText>
+                                    })}
+                                </ColumnContainer>
+                            </Card>
+                        </div>
+                    </ColumnContainer>
+                </RowContainer>
+            </ColumnContainer>
+        </>
+    );
 }

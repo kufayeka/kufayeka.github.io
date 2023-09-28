@@ -12,7 +12,7 @@ import {
 export default function HeaderComponent(){
     return(
         <>
-        <HeaderDesktop>
+        <HeaderDesktop className="w-full">
             <HeaderLeft></HeaderLeft>
             <HeaderCenter>
                 <HeaderLink>
