@@ -87,6 +87,12 @@ const CardBodyText = styled.h2<cardTitleInterface>`
   color: ${(props) => (props.color || "none")}};
 `;
 
+const BackgroundImage = styled.img`
+  --tw-blur: blur(0px);
+  filter: var(--tw-blur);
+`;
+
+
 export default function HomePage() {
     const handleInstagramLink = () => {
         window.location.href = 'https://instagram.com/yayankufa';
@@ -109,13 +115,13 @@ export default function HomePage() {
             <ColumnContainer>
                 <HeaderComponent></HeaderComponent>
                 <div className="absolute w-full h-[100vh] -z-10">
-                    <img className="fixed w-full h-full object-cover opacity-20" src="/img/9345037.jpg" />
+                    <BackgroundImage className="fixed w-full h-full object-cover opacity-20" src="/img/9345037.jpg" />
                 </div>
 
                 <RowContainer className="my-20">
                     <div className="w-fit h-fit flex flex-col p-3">
                         <h1 className="font-bold text-2xl text-white">Hi👋🏽</h1>
-                        <h1 className="font-thin text-4xl text-white mt-3">I'm</h1>
+                        <h1 className="font-thin text-4xl text-white mt-7">I'm</h1>
                         <h1 className="font-bold text-5xl text-white tracking-wider">Yeka Kufa</h1>
                         <RedHorizontalDivider></RedHorizontalDivider>
                         <div className="w-full">
@@ -128,7 +134,7 @@ export default function HomePage() {
                     <div className="absolute -z-10 top-[25%] left-[55%] bg-red-800 w-72 h-72 rounded-full flex flex-row items-center"/>
                 </RowContainer>
 
-                <RowContainer className="w-full bg-black/5 backdrop-blur-lg border-black border-2 p-3 justify-center">
+                <RowContainer className="w-full bg-black/5 backdrop-blur-lg border-black border-2 p-3 m-3 justify-center">
                     <ColumnContainer className="basis-1/2">
                         <div className="w-full">
                             <CardTitle color={colors.white} className="flex justify-start">About me</CardTitle>
@@ -192,7 +198,7 @@ export default function HomePage() {
                                 </ColumnContainer>
                             </Card>
                             <Card backgroundColor={colors.black} glass={true} radius={"5px"}>
-                                <CardBodyTitle color={colors.white} className="rounded-sm border-b-2 border-red-800 w-full p-1">Frontend Frameworks</CardBodyTitle>
+                                <CardBodyTitle color={colors.white} className="rounded-sm border-b-2 border-red-800 w-full p-1">Frontend Web Frameworks</CardBodyTitle>
                                 <ColumnContainer>
                                     {homeContent.mySkills.frontendFramework.map((item, index) => {
                                         return <CardBodyText color={colors.white}>{item}</CardBodyText>

@@ -46,4 +46,5 @@ export const homeContent = {
             "Panache Hibernate"
         ]
     }
+
 }
